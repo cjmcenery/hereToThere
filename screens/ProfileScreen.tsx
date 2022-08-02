@@ -1,15 +1,28 @@
 import { StyleSheet } from 'react-native';
-
+import * as React from 'react'
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+
+export default function ProfileScreen() {
+
+  const user = {
+    firstName:'Connor',
+    lastName: 'McEnery',
+    emailAddress: 'cjm366@cornell.edu',
+    age: 21,
+    gender: 'male',
+    city: 'Erie',
+    State: 'PA',
+    zip: '16509',
+    bio: 'My name is Connor.'
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <Text>{user.firstName}</Text>
+      <Text>{user.lastName}</Text>
+      <Text>{user.bio}</Text>
     </View>
   );
 }
