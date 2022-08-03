@@ -6,6 +6,7 @@ export default function AddTravel() {
 
 const [fromCity, onChangeFrom] = React.useState('');
 const [toCity, onChangeTo] = React.useState('');
+const [review, onChangeReview] = React.useState('');
 
 function addReview() {
 fetch('http://192.168.1.74:3001/addReview', {
@@ -50,8 +51,8 @@ fetch('http://192.168.1.74:3001/addReview', {
         <Text style={styles.label}>Review:</Text>
         <TextInput 
         style={styles.multiLineInput}
-        onChangeText={text => onChangeTo(text)}
-        value = { toCity }
+        onChangeText={text => onChangeReview(text)}
+        value = { review }
         placeholder='Type your review'
         placeholderTextColor={'black'}
         multiline={true}
