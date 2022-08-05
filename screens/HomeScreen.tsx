@@ -50,7 +50,7 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
   const [data, setData] = React.useState([])
   
   React.useEffect(()=> {
-    fetch('http://192.168.1.74:3001/reviews')
+    fetch('http://192.168.1.74:3001/getAllReviews')
     .then((response)=>response.json())
     .then((json)=>setData(json))
     .catch((error)=>alert(error))
