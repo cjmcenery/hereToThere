@@ -19,8 +19,13 @@ import AddTravelScreen from '../screens/AddTravelScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import LogInScreen from '../screens/LogInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import OpenReviewScreen from '../screens/OpenReviewScreen'
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import SettingsScreen from '../screens/SettingsScreen';
+import { Ionicons } from '@expo/vector-icons'; 
+
+
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -43,6 +48,8 @@ function RootNavigator() {
     <Stack.Navigator initialRouteName='Root'>
       <Stack.Screen name="AuthNavigator" component={AuthNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}  />
+      <Stack.Screen name="OpenReview" component={OpenReviewScreen} options={{ title: 'Review', headerShown: true }}  />
+      <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings', headerShown: true }}  />
     </Stack.Navigator>
   );
 }
@@ -90,10 +97,20 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{
+        options={({ navigation }: RootTabScreenProps<'Profile'>) => ({
           title: 'Profile',
           tabBarIcon: ({ color }) => <Feather name="user" size={24} color="white" />,
-        }}
+          headerRight: () => (
+            <Pressable
+              onPress={() => navigation.navigate('Settings')}
+              style={({ pressed }) => ({
+                opacity: pressed ? 0.5 : 1,
+                right: 10
+              })}>
+              <Ionicons name="ios-settings-outline" size={28} color="white" />
+            </Pressable>
+          )
+        })}
       />
     </BottomTab.Navigator>
   );

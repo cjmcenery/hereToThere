@@ -27,8 +27,8 @@ fetch('http://192.168.1.74:3001/addUser', {
     }).toString()
 });
 navigation.replace('Root', {
-  screen: 'Profile',
-  params: { email: userDetails.email }}), {email: userDetails.email}
+    screen: 'Profile',
+    params: { email: userDetails.email }}), {email: userDetails.email}
 }
 
   return (

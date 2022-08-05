@@ -1,25 +1,100 @@
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Image, Button } from 'react-native';
 import * as React from 'react'
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import ReviewItem from '../components/Review';
+import { RootTabScreenProps } from '../types';
+const ProfileImage = require('../assets/images/sean.png')
 
 
-export default function ProfileScreen(emailObject:any) {
-  const [user, setUser] = React.useState([])
-  const email = emailObject.route.params.email
-  React.useEffect(()=> {fetch('http://192.168.1.74:3001/getUser?email='+email)
-  .then((response)=>response.json())
-  .then((json)=>setUser(json))
-  .catch((error)=>alert(error))}
-  , user)
+export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile'>, emailObject:any) {
+  // const [user, setUser] = React.useState([])
+  // const email = emailObject.route.params.email
+  // React.useEffect(()=> {fetch('http://192.168.1.74:3001/getUser?email='+email)
+  // .then((response)=>response.json())
+  // .then((json)=>setUser(json))
+  // .catch((error)=>alert(error))}
+  // , user)
 
-  console.log(user[0])
+  const user = [{
+    firstName: 'Connor',
+    lastName: 'McEnery',
+    bio: 'My name is Connor',
+    username: 'cjmcenery'
+  }]
+
+  let data = [
+    {
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Ithaca',
+      toState: 'NY',
+      userID: '1534252352354',
+      timeStamp: '1',
+      review:'they both suck',
+      _id: 1
+    },
+    {
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Pittsburgh',
+      toState: 'PA',
+      userID: '134134134314134',
+      timeStamp: '1',
+      review:'they  dfgio jifjiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      _id: 2
+    },
+    {
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Miami',
+      toState: 'FL',
+      userID: '134523532523',
+      timeStamp: '1',
+      review:'they  dfgio jifjiwdos feswjfi jwjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      _id: 3
+    },
+    {
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Cleveland',
+      toState: 'Ohio',
+      userID: '132523523',
+      timeStamp: '1',
+      review:'they  dfgio jifjiwdos feswjfi jeiosadfds  fdsf gdse fgdsfkhjsiwdfg jhokidhfio hdwsih gfiosdh ihgi hsdi ghiwjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      _id: 4
+    },
+    {
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Boston',
+      toState: 'MA',
+      userID: '13243532523523',
+      timeStamp: '1',
+      review:'they  dfgio jifjsafsafsaiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      _id: 5
+    }
+  ]
+
   const obj = user[0]
   return (
     <View style={styles.container}>
-      <Text>{obj.firstName}</Text>
-      <Text>{obj.lastName}</Text>
-      <Text>{obj.bio}</Text>
+      <View style={styles.profileContainer}>
+        <View style={styles.leftContainer}>
+          <Image style={styles.profileImage} source={ProfileImage}></Image>
+        </View>
+        <View style={styles.rightContainer}>
+          <Text>{obj.firstName}</Text>
+          <Text>{obj.lastName}</Text>
+          <Text>{obj.bio}</Text>
+        </View>
+      </View>
+      <Text>My Reviews</Text>
+      <ScrollView>
+        {data.map(item => {
+            return (<ReviewItem key={item._id} fromCity={item.fromCity} fromState={item.fromState} toCity={item.toCity} toState={item.toState} userID={item.userID} timeStamp={item.timeStamp} review={item.review}/>)
+            })}
+      </ScrollView>
     </View>
   );
 }
@@ -30,6 +105,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  profileContainer: {
+    flexDirection: 'row',
+    width: '100%'
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -39,4 +118,16 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  profileImage: {
+    width: '60%',
+    height: 120,
+    marginTop: 20,
+    marginLeft: '20%',
+  },
+  leftContainer: {
+    width: '50%',
+  },
+  rightContainer: {
+    width: '50%'
+  }
 });

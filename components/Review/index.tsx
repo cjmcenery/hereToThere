@@ -1,22 +1,32 @@
-import { StyleSheet, TextInput, Button } from 'react-native';
+import { StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import * as React from 'react';
 import { Text, View, } from '../../components/Themed';
 import Review from './interfaces'
-
+import Navigation from '../../navigation';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function ReviewItem({fromCity, fromState, toCity, toState, userID, timeStamp, review}: Review) {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-        <View style={styles.line}>
-            <Text style={styles.label}>From:</Text><Text>{fromCity}</Text>
-        </View>
-        <View style={styles.line}>
-            <Text style={styles.label}>To:</Text><Text>{toCity}</Text>
-        </View>
-        <Text style={styles.label}>Review</Text>
-        <Text style={styles.paragraph}>{review}</Text>
-    </View>
+    <TouchableOpacity
+        onPress={()=> {
+          navigation.navigate('OpenReview', {fromCity: fromCity, fromState: fromState, toCity: toCity, toState: toState, userID: userID, timeStamp: timeStamp, review: review})
+        }}
+      >
+      <View style={styles.container}>
+          <View style={styles.line}>
+              <Text style={styles.label}>From:</Text><Text>{fromCity}, {fromState}</Text>
+          </View>
+          <View style={styles.line}>
+              <Text style={styles.label}>To:</Text><Text>{toCity}, {toState}</Text>
+          </View>
+          <Text style={styles.label}>Review</Text>
+          <Text style={styles.paragraph}>{review}</Text>
+          <Text>{userID}</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 

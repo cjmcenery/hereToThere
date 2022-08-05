@@ -8,6 +8,7 @@ import Review from '../components/Review/interfaces'
 import { get } from 'mongoose';
 import { SearchBar } from 'react-native-screens';
 
+
 interface ReviewProps {
   reviews: Review[]
 }
