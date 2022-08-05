@@ -4,25 +4,22 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 
-export default function ProfileScreen() {
+export default function ProfileScreen(emailObject:any) {
+  const [user, setUser] = React.useState([])
+  const email = emailObject.route.params.email
+  React.useEffect(()=> {fetch('http://192.168.1.74:3001/getUser?email='+email)
+  .then((response)=>response.json())
+  .then((json)=>setUser(json))
+  .catch((error)=>alert(error))}
+  , user)
 
-  const user = {
-    firstName:'Connor',
-    lastName: 'McEnery',
-    emailAddress: 'cjm366@cornell.edu',
-    age: 21,
-    gender: 'male',
-    city: 'Erie',
-    State: 'PA',
-    zip: '16509',
-    bio: 'My name is Connor.'
-  }
-
+  console.log(user[0])
+  const obj = user[0]
   return (
     <View style={styles.container}>
-      <Text>{user.firstName}</Text>
-      <Text>{user.lastName}</Text>
-      <Text>{user.bio}</Text>
+      <Text>{obj.firstName}</Text>
+      <Text>{obj.lastName}</Text>
+      <Text>{obj.bio}</Text>
     </View>
   );
 }
