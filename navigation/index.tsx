@@ -40,7 +40,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName='AuthNavigator'>
+    <Stack.Navigator initialRouteName='Root'>
       <Stack.Screen name="AuthNavigator" component={AuthNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}  />
     </Stack.Navigator>
