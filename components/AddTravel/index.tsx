@@ -27,7 +27,7 @@ fetch('http://192.168.1.74:3001/addReview', {
       toCity: toCity,
       toState:toState,
       review: review,
-      userID: 
+      userID: '123'
     }).toString()
 });
 }
