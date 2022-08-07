@@ -59,53 +59,53 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
 
   let reviews = [
     {
-      fromCity:'1',
-      fromState: '1',
-      toCity:'2',
-      toState: '1',
-      userID: '1',
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Ithaca',
+      toState: 'NY',
+      userID: '1534252352354',
       timeStamp: '1',
-      review:'they both suck',
+      review:'iewjf oiweiofnoiewhjfiwehfgiohweihfiohjigfhirehgiowehrgiohwerihgj owe gerg  erwg we rgernig jiwr ifghweoifhgoi wehofghweoihfiowheoifghjweg',
       _id: 1
     },
     {
-      fromCity:'1',
-      fromState: '1',
-      toCity:'2',
-      toState: '1',
-      userID: '1',
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Pittsburgh',
+      toState: 'PA',
+      userID: '134134134314134',
       timeStamp: '1',
-      review:'they  dfgio jifjiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsieg r gewrgfewripgji   orejgiwjniegjijwer r wekgmiorwnio ijirjgi jij ewr r  ',
       _id: 2
     },
     {
-      fromCity:'1',
-      fromState: '1',
-      toCity:'2',
-      toState: '1',
-      userID: '1',
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Miami',
+      toState: 'FL',
+      userID: '134523532523',
       timeStamp: '1',
-      review:'they  dfgio jifjiwdos feswjfi jwjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjiwdos feswjfi jwjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh grwerg erwgergerg',
       _id: 3
     },
     {
-      fromCity:'1',
-      fromState: '1',
-      toCity:'2',
-      toState: '1',
-      userID: '1',
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Cleveland',
+      toState: 'Ohio',
+      userID: '132523523',
       timeStamp: '1',
-      review:'they  dfgio jifjiwdos feswjfi jeiosadfds  fdsf gdse fgdsfkhjsiwdfg jhokidhfio hdwsih gfiosdh ihgi hsdi ghiwjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjiwdos feswjfi jeiosadfds  fdsf gdse fgdsfkhjsiwdfg jhokidhfio hdwsih gfiosdh ihgi hsdi ghiwjf ioewjfijewijf ioewjf ijewi jfiewrg ergerg  rw ger ber bre erher bb reb g b gfsfd ',
       _id: 4
     },
     {
-      fromCity:'1',
-      fromState: '1',
-      toCity:'2',
-      toState: '1',
-      userID: '1',
+      fromCity:'Erie',
+      fromState: 'PA',
+      toCity:'Boston',
+      toState: 'MA',
+      userID: '13243532523523',
       timeStamp: '1',
-      review:'they  dfgio jifjsafsafsaiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjsafsafsaiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh erg ergrew ggerd mmsdvn snv nu hur hi hvi hdfi i ijisjfijijvij ijrijf iijrigj iirjgijeri ijrij ij iirjigj ijrioghpoihgiorhjg iohfidhj vihfd ihrig ihrg ',
       _id: 5
     }
   ]
@@ -125,8 +125,10 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
       setData([])
   }
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <View style={styles.search}>
+        <View style={styles.line}>
+          <Text style={styles.label}>From:</Text>
         <TextInput 
           style={styles.searchText}
           onChangeText={text => onChangeFromCity(text)}
@@ -134,6 +136,9 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
           placeholder='From City'
           placeholderTextColor={'black'}
           />
+          </View>
+          <View style={styles.line}>
+          <Text style={styles.label}></Text>
           <TextInput 
           style={styles.searchText}
           onChangeText={text => onChangeFromState(text)}
@@ -141,6 +146,10 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
           placeholder='From State'
           placeholderTextColor={'black'}
           />
+          </View>
+          <View>
+          <View style={styles.line}>
+          <Text style={styles.label}>To:</Text>
           <TextInput 
           style={styles.searchText}
           onChangeText={text => onChangeToCity(text)}
@@ -148,6 +157,10 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
           placeholder='To City'
           placeholderTextColor={'black'}
           />
+          </View>
+          </View>
+          <View style={styles.line}>
+          <Text style={styles.label}></Text>
           <TextInput 
           style={styles.searchText}
           onChangeText={text => onChangeToState(text)}
@@ -155,6 +168,7 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
           placeholder='To State'
           placeholderTextColor={'black'}
           />
+          </View>
           <Button
         onPress={()=> setData([])}
         title='Search'
@@ -170,8 +184,7 @@ export default function HomeScreen({ navigation}: RootTabScreenProps<'Home'>) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFA69E'
   },
   title: {
     fontSize: 20,
@@ -183,18 +196,36 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   search: {
-    backgroundColor: 'grey',
+    backgroundColor: '#A5FFD6',
     width: '90%',
     marginLeft: '5%',
     borderRadius: 10,
     marginBottom:10,
-    marginTop: 10
+    marginTop: 10,
+    borderColor: 'grey',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    borderWidth: 3,
+    padding: 15
   },
   searchText: {
     backgroundColor: 'white',
     width: "60%",
-    marginLeft: '20%',
+    marginLeft: '0%',
     fontSize: 20,
     marginTop: 10
+  },
+  line: {
+      flexDirection: 'row',
+      backgroundColor: '#A5FFD6'
+  },
+  label: {
+    width: '20%',
+    left: 0,
+    fontWeight: 'bold',
+    fontSize: 20,
+    top: 10
   }
 });

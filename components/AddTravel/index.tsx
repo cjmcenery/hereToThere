@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, Button, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, TextInput, Button, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView, Pressable, TouchableOpacity } from 'react-native';
 import * as React from 'react';
 import { Text, View, } from '../../components/Themed';
 
@@ -34,6 +34,7 @@ fetch('http://192.168.1.74:3001/addReview', {
 
   return (
     <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() }>
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
     <View style={styles.container}>
       <Text style={styles.title}>Create a New Travel Review!</Text>
       <View style={styles.line}>
@@ -97,14 +98,16 @@ fetch('http://192.168.1.74:3001/addReview', {
         numberOfLines={5}
         ref={ref_input5}
         />
-
-      <Button
-      onPress={addReview}
-      title='Add Travel Review'
-      color= 'blue'/>
+      <TouchableOpacity
+      style={styles.postButton}
+      onPress={addReview}>
+        <Text
+        style={styles.buttonText}>Post Review!</Text>
+      </TouchableOpacity>
       
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
+    </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );
 }
@@ -118,7 +121,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 15
+    marginBottom: 15,
+    color: 'black'
   },
   separator: {
     marginVertical: 30,
@@ -130,21 +134,35 @@ const styles = StyleSheet.create({
       padding: 5,
       width: 125,
       marginBottom: 15,
+      color: 'black'
   },
   multiLineInput: {
     backgroundColor: 'white',
     padding: 5,
-    width: 300,
+    width: 350,
     marginBottom: 15,
+    height: 150,
+    color: 'black'
 },
   label: {
       marginRight: 15,
       fontWeight: 'bold',
       fontSize: 25,
+      color: 'black'
   },
   line: {
       flexDirection: 'row',
-  }
+      color: 'black'
+  },
+  postButton: {
+    backgroundColor: '#FFA69E',
+    padding: 15,
+    borderRadius: 15
+  },
+  buttonText: {
+    fontSize: 22
+  },
+
 });
 
 

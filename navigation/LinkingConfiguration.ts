@@ -32,7 +32,7 @@ const linking: LinkingOptions<RootStackParamList> = {
           },
         },
       },
-      Modal: 'modal',
+      OpenReview: 'openreview',
       NotFound: '*',
       SignUp: 'signup',
       LogIn: 'login'

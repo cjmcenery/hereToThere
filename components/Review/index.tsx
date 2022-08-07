@@ -32,12 +32,14 @@ export default function ReviewItem({fromCity, fromState, toCity, toState, userID
 
 const styles = StyleSheet.create({
   container: {
-    width:'80%',
-    marginLeft:'10%',
+    width:'90%',
+    marginLeft:'5%',
     marginBottom:20,
-    borderWidth:5,
-    borderColor:'red',
-    padding:5
+    borderWidth:3,
+    borderColor:'grey',
+    borderRadius: 15,
+    padding:15,
+    backgroundColor: 'white'
   },
   paragraph: {
 
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
 },
 line: {
     flexDirection: 'row',
+    backgroundColor: 'white'
 }
 });
 

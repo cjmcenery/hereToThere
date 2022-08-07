@@ -19,7 +19,7 @@ export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile
   const user = [{
     firstName: 'Connor',
     lastName: 'McEnery',
-    bio: 'My name is Connor',
+    bio: 'My name is Connor. I am a 21 year old college student who enjoys the outdoors, cheaper restaurants, and going out with friends.',
     username: 'cjmcenery'
   }]
 
@@ -31,7 +31,7 @@ export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile
       toState: 'NY',
       userID: '1534252352354',
       timeStamp: '1',
-      review:'they both suck',
+      review:'iewjf oiweiofnoiewhjfiwehfgiohweihfiohjigfhirehgiowehrgiohwerihgj owe gerg  erwg we rgernig jiwr ifghweoifhgoi wehofghweoihfiowheoifghjweg',
       _id: 1
     },
     {
@@ -41,7 +41,7 @@ export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile
       toState: 'PA',
       userID: '134134134314134',
       timeStamp: '1',
-      review:'they  dfgio jifjiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsieg r gewrgfewripgji   orejgiwjniegjijwer r wekgmiorwnio ijirjgi jij ewr r  ',
       _id: 2
     },
     {
@@ -51,7 +51,7 @@ export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile
       toState: 'FL',
       userID: '134523532523',
       timeStamp: '1',
-      review:'they  dfgio jifjiwdos feswjfi jwjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjiwdos feswjfi jwjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh grwerg erwgergerg',
       _id: 3
     },
     {
@@ -61,7 +61,7 @@ export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile
       toState: 'Ohio',
       userID: '132523523',
       timeStamp: '1',
-      review:'they  dfgio jifjiwdos feswjfi jeiosadfds  fdsf gdse fgdsfkhjsiwdfg jhokidhfio hdwsih gfiosdh ihgi hsdi ghiwjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjiwdos feswjfi jeiosadfds  fdsf gdse fgdsfkhjsiwdfg jhokidhfio hdwsih gfiosdh ihgi hsdi ghiwjf ioewjfijewijf ioewjf ijewi jfiewrg ergerg  rw ger ber bre erher bb reb g b gfsfd ',
       _id: 4
     },
     {
@@ -71,7 +71,7 @@ export default function ProfileScreen({ navigation}: RootTabScreenProps<'Profile
       toState: 'MA',
       userID: '13243532523523',
       timeStamp: '1',
-      review:'they  dfgio jifjsafsafsaiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh suck',
+      review:'they  dfgio jifjsafsafsaiwdos feswjfi jeiowjf ioewjfijewijf ioewjf ijewi jfiew hgfihdsiofghioewhfoiweh ioh erg ergrew ggerd mmsdvn snv nu hur hi hvi hdfi i ijisjfijijvij ijrijf iijrigj iirjgijeri ijrij ij iirjigj ijrioghpoihgiorhjg iohfidhj vihfd ihrig ihrg ',
       _id: 5
     }
   ]

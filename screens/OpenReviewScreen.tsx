@@ -9,35 +9,32 @@ const ProfileImage = require('../assets/images/sean.png')
 
 
 export default function OpenReviewScreen(reviewObj:any) {
-  const review = reviewObj.route.params
-  console.log(review)
+  const item = reviewObj.route.params
+  console.log(item)
 
   return (
-    <View>
-      <View style={styles.container}>
-          <View style={styles.line}>
-              <Text style={styles.label}>From:</Text><Text>{review.fromCity}, {review.fromState}</Text>
-          </View>
-          <View style={styles.line}>
-              <Text style={styles.label}>To:</Text><Text>{review.toCity}, {review.toState}</Text>
-          </View>
-          <Text style={styles.label}>Review</Text>
-          <Text style={styles.paragraph}>{review.review}</Text>
-          <Text>{review.userID}</Text>
-      </View>
+      // <View style={styles.container}>
+      //     <View style={styles.line}>
+      //         <Text style={styles.label}>From:</Text><Text>{review.fromCity}, {review.fromState}</Text>
+      //     </View>
+      //     <View style={styles.line}>
+      //         <Text style={styles.label}>To:</Text><Text>{review.toCity}, {review.toState}</Text>
+      //     </View>
+      //     <Text style={styles.label}>Review</Text>
+      //     <Text style={styles.paragraph}>{review.review}</Text>
+      //     <Text>{review.userID}</Text>
+      // </View>
+    <View style={styles.container}>
+      <ReviewItem key={item._id} fromCity={item.fromCity} fromState={item.fromState} toCity={item.toCity} toState={item.toState} userID={item.userID} timeStamp={item.timeStamp} review={item.review}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    width:'80%',
-    marginLeft:'10%',
-    marginBottom:20,
-    top: 150,
-    borderWidth:5,
-    borderColor:'red',
-    padding:5
+    backgroundColor: '#FFA69E',
+    height: '100%',
+    paddingTop: 150
   },
   paragraph: {
 

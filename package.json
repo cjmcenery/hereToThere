@@ -42,7 +42,8 @@
     "react-native-web": "0.17.7",
     "stream": "^0.0.2",
     "undefined": "expo-auth-session/providers/google",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "expo-secure-store": "~11.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

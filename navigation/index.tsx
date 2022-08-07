@@ -83,7 +83,7 @@ function BottomTabNavigator() {
         component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({ color }) => <FontAwesome name="home" size={30} color="white" />,
+          tabBarIcon: ({ color }) => <FontAwesome name="home" size={30} color="white" />
         })}
       />
       <BottomTab.Screen
