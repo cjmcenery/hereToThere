@@ -24,7 +24,10 @@ import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../typ
 import LinkingConfiguration from './LinkingConfiguration';
 import SettingsScreen from '../screens/SettingsScreen';
 import { Ionicons } from '@expo/vector-icons'; 
-
+import FollowersScreen from '../screens/FollowersScreen';
+import FollowingScreen from '../screens/FollowingScreen';
+import OtherUserProfileScreen from '../screens/OtherUserProfileScreen';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -49,6 +52,9 @@ function RootNavigator() {
       <Stack.Screen name="AuthNavigator" component={AuthNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}  />
       <Stack.Screen name="OpenReview" component={OpenReviewScreen} options={{ title: 'Review', headerShown: true }}  />
+      <Stack.Screen name="Followers" component={FollowersScreen} options={{ title: 'Followers', headerShown: true }}  />
+      <Stack.Screen name="Following" component={FollowingScreen} options={{ title: 'Following', headerShown: true }}  />
+      <Stack.Screen name="OtherUserProfile" component={OtherUserProfileScreen} options={{ title: 'Profile', headerShown: true }}  />
       <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings', headerShown: true }}  />
     </Stack.Navigator>
   );
@@ -82,15 +88,15 @@ function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
-          title: 'Home',
-          tabBarIcon: ({ color }) => <FontAwesome name="home" size={30} color="white" />
+          title: 'Reviews',
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="airplane-search" size={24} color="white" />
         })}
       />
       <BottomTab.Screen
         name="AddTravel"
         component={AddTravelScreen}
         options={{
-          title: 'Add Travel',
+          title: 'Post Review',
           tabBarIcon: ({ color }) => <Entypo name="squared-plus" size={24} color="white" />,
         }}
       />

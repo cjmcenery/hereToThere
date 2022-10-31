@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 const ProfileImage = require('../assets/images/sean.png')
 
 
-export default function ProfileScreen( emailObject:any) {
+export default function OtherUserProfileScreen() {
   const navigation = useNavigation();
   // const [user, setUser] = React.useState([])
   // const email = emailObject.route.params.email

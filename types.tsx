@@ -20,6 +20,9 @@ export type RootStackParamList = {
   LogIn: undefined;
   OpenReview: undefined;
   Settings: NavigatorScreenParams<RootTabParamList> | undefined;
+  Followers: undefined;
+  Following: undefined;
+  OtherUserProfile: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -31,7 +34,9 @@ export type RootTabParamList = {
   Home: undefined;
   AddTravel: undefined;
   Profile: undefined;
-  Settings: undefined
+  Settings: undefined;
+  Followers: undefined;
+  Following: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<

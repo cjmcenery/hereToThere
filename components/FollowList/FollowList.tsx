@@ -7,16 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function ReviewItem({fromCity, fromState, toCity, toState, userID, timeStamp, review}: Review) {
-  // const [userName, setUserName] = React.useState('')
   const navigation = useNavigation();
-
-  // const url = ''
-  // React.useEffect(()=> {
-  // fetch(url+'/getUserNameById?userId='+userID)
-  // .then((response)=>response.json())
-  // .then((userNameResponse)=>setUserName(userNameResponse))}
-  // ,[])
-
 
   return (
     <TouchableOpacity
@@ -25,11 +16,6 @@ export default function ReviewItem({fromCity, fromState, toCity, toState, userID
         }}
       >
       <View style={styles.container}>
-        <TouchableOpacity
-        onPress={()=>navigation.navigate('OtherUserProfile')}
-        >
-          <Text style={styles.userName}>@{userID}</Text>
-        </TouchableOpacity>
           <View style={styles.line}>
               <Text style={styles.label}>From:</Text><Text>{fromCity}, {fromState}</Text>
           </View>
@@ -38,6 +24,7 @@ export default function ReviewItem({fromCity, fromState, toCity, toState, userID
           </View>
           <Text style={styles.label}>Review</Text>
           <Text style={styles.paragraph}>{review}</Text>
+          <Text>{userID}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -65,10 +52,6 @@ const styles = StyleSheet.create({
 line: {
     flexDirection: 'row',
     backgroundColor: 'white'
-},
-userName: {
-  fontSize: 15,
-  fontWeight: 'bold'
 }
 });
 

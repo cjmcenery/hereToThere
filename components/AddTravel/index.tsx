@@ -1,6 +1,7 @@
 import { StyleSheet, TextInput, Button, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView, Pressable, TouchableOpacity } from 'react-native';
 import * as React from 'react';
 import { Text, View, } from '../../components/Themed';
+import { Timestamp } from 'mongodb';
 
 export default function AddTravel() {
 
@@ -16,6 +17,8 @@ const ref_input4 = React.useRef();
 const ref_input5 = React.useRef();
 
 function addReview() {
+  const timeElapsed = Date.now()
+  const timeStamp = new Date(timeElapsed)
 fetch('http://192.168.1.74:3001/addReview', {
     method: 'PUT',
     headers:{
@@ -27,7 +30,8 @@ fetch('http://192.168.1.74:3001/addReview', {
       toCity: toCity,
       toState:toState,
       review: review,
-      userID: '123'
+      userID: '123',
+      timeStamp: timeStamp.toString()
     }).toString()
 });
 }
@@ -134,7 +138,8 @@ const styles = StyleSheet.create({
       padding: 5,
       width: 125,
       marginBottom: 15,
-      color: 'black'
+      color: 'black',
+      fontSize: 16
   },
   multiLineInput: {
     backgroundColor: 'white',
@@ -142,7 +147,8 @@ const styles = StyleSheet.create({
     width: 350,
     marginBottom: 15,
     height: 150,
-    color: 'black'
+    color: 'black',
+    fontSize: 16
 },
   label: {
       marginRight: 15,
@@ -155,7 +161,7 @@ const styles = StyleSheet.create({
       color: 'black'
   },
   postButton: {
-    backgroundColor: '#FFA69E',
+    backgroundColor: '#A5FFD6',
     padding: 15,
     borderRadius: 15
   },

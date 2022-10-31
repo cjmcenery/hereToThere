@@ -35,7 +35,9 @@ const linking: LinkingOptions<RootStackParamList> = {
       OpenReview: 'openreview',
       NotFound: '*',
       SignUp: 'signup',
-      LogIn: 'login'
+      LogIn: 'login',
+      Followers: 'followers',
+      Following: 'following'
     },
   },
 };

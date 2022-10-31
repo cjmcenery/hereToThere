@@ -10,8 +10,6 @@ const ProfileImage = require('../assets/images/sean.png')
 
 export default function OpenReviewScreen(reviewObj:any) {
   const item = reviewObj.route.params
-  console.log(item)
-
   return (
       // <View style={styles.container}>
       //     <View style={styles.line}>
@@ -26,6 +24,7 @@ export default function OpenReviewScreen(reviewObj:any) {
       // </View>
     <View style={styles.container}>
       <ReviewItem key={item._id} fromCity={item.fromCity} fromState={item.fromState} toCity={item.toCity} toState={item.toState} userID={item.userID} timeStamp={item.timeStamp} review={item.review}/>
+      <Text>Created: {item.timeStamp}</Text>
     </View>
   );
 }
